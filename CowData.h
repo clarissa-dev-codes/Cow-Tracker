@@ -46,10 +46,14 @@ public:
 	string getStatus();
 	string getBirthDate();
 	string getDeathDate();
+	int getHerdSize(Cow* cows);
 
 
 	//needs to be a hash sort
 	void sortByTag(Cow* cows);
+
+	//save and load functions
+	void saveToFile(const string& saveFile) const;
 
 
 	~Cow() = default;

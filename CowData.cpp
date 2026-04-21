@@ -1,14 +1,63 @@
 #include "CowData.h"
+#include "ErrorClass.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <algorithm>
 
 //need the load in function to read in the data from the file and create cow objects, 
 // then store them in a vector or array.
 // I need to add a get size function to return the size of the herd.
-// 
-// 
-//the methods here, may get rid of them
+int Cow::getHerdSize(Cow* cows)
+{
+	int count = 0;
+	for (int i = 0; i < sizeof(cows) / sizeof(cows[0]); i++)
+	{
+		if (cows[i].getStatus() == "Alive")
+		{
+			count++;
+		}
+	}
+	return count;
+}
+
+//use binary files to save and load for more efficient storage and retrieval.
+//helper functions
+void writeString(ofstream& out, const string& str)
+{
+	size_t length = str.size();
+	out.write(reinterpret_cast<const char*>(&length), sizeof(length));
+	out.write(str.c_str(), length);
+}
+
+void readString(ifstream& in, string& str)
+{
+	size_t length;
+	in.read(reinterpret_cast<char*>(&length), sizeof(length));
+	str.resize(length);
+	in.read(&str[0], length);
+}
+
+//loading functions
+
+
+//saving functions 
+void Cow::saveToFile(const string& saveFile) const
+{
+	ofstream outFile(saveFile, ios::binary);
+	if (!outFile)
+	{
+		throw fileErrorException();
+	}
+	
+	//need the size from the getHerdSize function to know how many cows to save.
+	
+	
+}
+
+
+
+
 void Cow::markSold()
 {
 	data.sold = true;

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ba938df3-102f-4c6c-845b-0e027cd0e28e}</ProjectGuid>
+    <ProjectGuid>{ba9ecef2-94a4-450f-93c4-832d11869fc3}</ProjectGuid>
     <RootNamespace>CowTracker</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CowData.h" />
+    <ClInclude Include="ErrorClass.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CowData.cpp" />

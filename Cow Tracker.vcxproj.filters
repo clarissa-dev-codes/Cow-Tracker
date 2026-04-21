@@ -18,6 +18,9 @@
     <ClInclude Include="CowData.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="ErrorClass.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CowData.cpp">
