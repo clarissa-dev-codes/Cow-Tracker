@@ -24,7 +24,7 @@ class fileParsingException
 {
 };
 
-//errr for when animal is not found
+//error for when animal is not found
 class animalNotFoundException
 {
 };

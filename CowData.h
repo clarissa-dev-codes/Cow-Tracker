@@ -22,9 +22,17 @@ struct CowData
 class Cow
 {
 private:
-	CowData data;
+	vector<Cow> cows;
+	CowData cowData;
+	int numCows;
 
 public:
+	Cow();
+	Cow(const string& filename);
+
+	int getHerdSize();
+
+
 	void markSold();
 	void markDead();
 
@@ -46,14 +54,21 @@ public:
 	string getStatus();
 	string getBirthDate();
 	string getDeathDate();
-	int getHerdSize(Cow* cows);
+	int getHerdSize();
 
 
 	//needs to be a hash sort
-	void sortByTag(Cow* cows);
+	void sortByTag();
+
+	void removeCow(int tagNum, const string& filename);
+	void moveDeadCows(const string& filename, int id);
+	void moveSoldCows(const string& filename, int id);
+	void addCow(const CowData& data, const string& filename);
+	Cow& findCow(int tagNum);
 
 	//save and load functions
 	void saveToFile(const string& saveFile) const;
+	void loadFromFile(const string& loadFile);
 
 
 	~Cow() = default;
